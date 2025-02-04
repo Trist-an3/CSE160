@@ -1,0 +1,106 @@
+<!-- Tristan Garcia -->
+<!-- tgarcia7@ucsc.edu -->
+
+                
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Assignment:2 </title>
+    <link rel="icon" href="data:,">
+    <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+    <style>
+        body {
+          font-family: 'Minecraft', Arial, sans-serif;
+          display: flex;
+          flex-direction: column;
+          align-items: center; 
+          justify-content: center; 
+          height: 100vh; 
+          margin: 0;
+          background-color: #A6D3F5; 
+        }
+  
+        header {
+          position: fixed;
+          top: 0;
+          width: 100%;
+          text-align: center;
+          background-color: #A6D3F5;
+          padding: 10px 0;
+          font-size: 24px;
+          font-weight: bold;
+        }
+
+        canvas {
+          display: block; 
+          margin: auto; 
+        }
+
+        p, button, input[type="range"] {
+          text-align: center; 
+        }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <header> Billy The Creeper</header>
+    <canvas id="webgl" width="400" height="400">
+        Please use a browser that supports "canvas"
+    </canvas>
+    
+    <p id = "numdot"> XXX </p>
+    
+    <p>
+      Head Nod:
+      <button type = "button" id = "AnimationNodOnButton"> ON </button>
+      <button type = "button" id = "AnimationNodOffButton"> OFF </button>
+
+      HeadTilt:
+      <button type = "button" id = "AnimationHeadOnButton"> ON </button>
+      <button type = "button" id = "AnimationHeadOffButton"> OFF </button>
+    </p>
+    <p>
+      BodySway:
+      <button type = "button" id = "AnimationBodyOnButton"> ON </button>
+      <button type = "button" id = "AnimationBodyOffButton"> OFF </button>
+    </p>
+    <p>
+      Arm Animation:
+      <button type="button" id="AnimationArmOnButton">ON</button>
+      <button type="button" id="AnimationArmOffButton">OFF</button>
+  </p>
+
+    <p>
+    body <input type = "range" min = "-45" max = "45" value = "0" class = "slider" id = "bodySlide">
+    </p>
+
+    <p>
+    head <input type = "range" min = "-45" max = "45" value = "0" class = "slider" id = "headSlide">
+      <audio id="nodSound" src="creeper_hiss.mp3" loop></audio>
+      <audio id="headSound" src="creeper_hurt_sound.mp3" loop></audio>
+    </p>
+
+
+    <p>
+      Camera  <input type = "range" min = "0" max = "360" value = "0" class = "slider" id = "angleSlide">
+    </p>
+
+    <button type = "button" id = "musicButton"> Music </button>
+    <audio id="music" src="minecraft.mp3"></audio>
+
+    <audio id="flipSound" src="flip.mp3"></audio>
+
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/cuon-matrix.js"></script>
+    <script src="Triangle.js"></script>
+    <script src="Circle.js"></script>
+    <script src="Point.js"></script>
+    <script src="Cube.js"></script>
+    <script src="BlockyAnimal.js"></script>
+
+
+  </body>
+</html>
