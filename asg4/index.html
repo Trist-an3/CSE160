@@ -1,0 +1,151 @@
+<!-- Tristan Garcia -->
+<!-- tgarcia7@ucsc.edu -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Assignment:3 </title>
+    <link rel="icon" href="data:,">
+    <!-- <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet"> -->
+    <link href="https://fonts.cdnfonts.com/css/ovo" rel="stylesheet">
+                                                                
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        body {
+            font-family: 'Ovo', sans-serif;
+            background-color: #A6D3F5;
+            animation: fadeIn 2s ease-in; /* Apply the fade-in animation */
+        }
+
+        .center-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Space between buttons */
+        }
+
+        .slider-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Space between sliders */
+            flex-wrap: wrap; /* Move sliders to the next row if needed */
+        }
+
+        canvas {
+          display: block; 
+          margin: auto; 
+        }
+
+    button {
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for buttons */
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        color: white; /* Text color for buttons */
+        margin-top: 10px; /* Space above each button */
+        margin-bottom: 10px; /* Space below each button */
+    }
+
+        p, input[type="range"] {
+          text-align: center; 
+        }
+
+
+
+        button {
+          background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for buttons */
+          border: none;
+          padding: 10px 20px;
+          cursor: pointer;
+          color: white; /* Text color for buttons */
+        }
+    </style>
+    
+  </head>
+    <p> Lights and Stuff </p>
+    <body onload="main()">
+        <canvas id="webgl" width="700" height="400">
+            Please use a browser that supports "canvas"
+        </canvas>
+
+        <p id="numdot"> XXX </p>
+
+        <div class="button-container">
+            <button type="button" id="normalOn">Normal On</button>
+            <button type="button" id="normalOff">Normal Off</button>
+        </div>
+
+        <div class="button-container">
+            <button type="button" id="lightOn">Light On </button>
+            <button type="button" id="lightOff">Light Off</button>
+        </div>
+
+        <div class="button-container">
+            <button type="button" id="spotlightOn">Spotlight On </button>
+            <button type="button" id="spotlightOff">Spotlight Off</button>
+        </div>
+    
+        
+
+        <div class="slider-container">
+            <div class="center-container">
+                <input type="range" id="lightX" min="-500" max="500" value="50" step="1">
+                <label for="lightX"> Light X </label>
+            </div>
+
+            <div class="center-container">
+                <input type="range" id="lightY" min="-250" max="250" value="50" step="1">
+                <label for="lightY">Light Y </label>
+            </div>
+
+            <div class="center-container">
+                <input type="range" id="lightZ" min="-250" max="250" value="50" step="1">
+                <label for="lightZ">Light Z </label>
+            </div>
+        </div>
+
+        <div class="slider-container">
+            <div class="center-container">
+                <input type="range" id="redSlider" min="30" max="120" value="50" step="1">
+                <label for="redSlider">Red </label>
+            </div>
+            <div class="center-container">
+                <input type="range" id="greenSlider" min="30" max="120" value="50" step="1">
+                <label for="greenSlider">Green </label>
+            </div>
+            <div class="center-container">
+                <input type="range" id="blueSlider" min="30" max="120" value="50" step="1">
+                <label for="blueSlider">Blue </label>
+            </div>
+        </div>
+
+        <div class="center-container">
+            <input type="range" id="cameraAngleSlider" min="0" max="360" value="0" step="1">
+            <label for="cameraAngleSlider">Camera Angle </label>
+        </div>
+
+
+        <script src="lib/webgl-utils.js"></script>
+        <script src="lib/webgl-debug.js"></script>
+        <script src="lib/cuon-utils.js"></script>
+        <!-- <script src="lib/cuon-matrix.js"></script> -->
+        <script src="lib/cuon-matrix-cse160.js"></script>
+        
+        <script src="Sphere.js"></script>
+        <script src="Triangle.js"></script>
+        <script src="Cube.js"></script>
+        <script src="world.js"></script>
+        <script src="camera.js"></script>
+    </body>
+</html>
